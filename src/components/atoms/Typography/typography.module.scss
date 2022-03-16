@@ -384,9 +384,8 @@
     text-align: right;
   }
 
-  @each $color, $_ in $am-colors {
+  @each $color, $_ in $sl-colors {
     &.#{$color} {
-      //ч/з пробел добавляем
       color: get-color($color, base);
     }
   }
