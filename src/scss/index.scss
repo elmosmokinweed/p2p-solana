@@ -1,0 +1,15 @@
+@import "./reset.scss";
+@import "./fonts.scss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $sl-font-family;
+}
+
+#__next {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}

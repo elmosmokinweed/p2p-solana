@@ -1,0 +1,28 @@
+@import "variables";
+
+@mixin breakpoint($breakpoint) {
+  @if $breakpoint == "" {
+    @content;
+  } @else {
+    $value: map-get($sl-breakpoints, $breakpoint);
+
+    @if $value != null {
+      @media (min-width: $value) {
+        @content;
+      }
+    } @else {
+      @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+    }
+  }
+}
+
+@function get-color($nsle, $state) {
+  $color: map-get($sl-colors, $name);
+
+  @if $color != null {
+    @return map-get($color, $state);
+  }
+
+  @return null;
+}

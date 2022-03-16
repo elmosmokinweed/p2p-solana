@@ -1,0 +1,31 @@
+@import "src/scss/variables";
+@import "src/scss/mixins";
+
+.root {
+  padding-top: 94px;
+
+  &.outer {
+    $width: map-get($am-containers, mobile);
+
+    width: $width;
+    min-width: $width;
+    max-width: $width;
+    margin: 0 auto;
+
+    @include breakpoint("tablet") {
+      $width: map-get($am-containers, tablet);
+
+      width: $width;
+      min-width: $width;
+      max-width: $width;
+    }
+
+    @include breakpoint("desktop") {
+      $width: map-get($am-containers, desktop);
+
+      width: $width;
+      min-width: $width;
+      max-width: $width;
+    }
+  }
+}
