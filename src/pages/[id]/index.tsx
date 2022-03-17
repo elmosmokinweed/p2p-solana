@@ -11,7 +11,6 @@ require('@solana/wallet-adapter-react-ui/styles.css');
 
 const ConfirmTrade: NextPage = () => {
   const router = useRouter();
-
   console.log(router.asPath);
 
   return (
