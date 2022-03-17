@@ -1,4 +1,4 @@
-$sl-font-family: "Oxanium";
+$sl-font-family: "Gilroy";
 
 $sl-containers: (
   mobile: calc(100% - 32px),
@@ -17,16 +17,13 @@ $sl-colors: (
     base: #ffffff,
   ),
   background: (
-    base: #5733f6,
+    base: #080a0c,
   ),
-  accent: (
-    base: #5205cf,
+  inactive: (
+    base: #6a84a0,
   ),
-  secondary: (
-    base: #5917ae,
-  ),
-  hover: (
-    base: #a1a1a1,
+  subtitle: (
+    base: #8736ff,
   ),
 );
 

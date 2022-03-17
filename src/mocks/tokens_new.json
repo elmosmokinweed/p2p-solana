@@ -1,0 +1,20 @@
+[
+  {
+    "symbol": "SOL",
+    "address": "11111111111111111111111111111111",
+    "name": "Solana",
+    "imgURI": "https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/So11111111111111111111111111111111111111112/logo.png"
+  },
+  {
+    "symbol": "WSOL",
+    "address": "So11111111111111111111111111111111111111112",
+    "name": "Wrapped Solana",
+    "imgURI": "https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/So11111111111111111111111111111111111111112/logo.png"
+  },
+  {
+    "symbol": "TT",
+    "address": "26uV8spRuiahEgQcMBGWhPDxs1zYfYBFCgdA6WTb8PYp",
+    "name": "Test token",
+    "imgURI": "https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/So11111111111111111111111111111111111111112/logo.png"
+  }
+]

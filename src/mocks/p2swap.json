@@ -82,16 +82,12 @@
         {
           "name": "startDate",
           "type": {
-            "option": {
-              "defined": "i64"
-            }
+            "option": "i64"
           }
         },
         {
           "name": "expireDate",
-          "type": {
-            "defined": "i64"
-          }
+          "type": "i64"
         }
       ]
     },
@@ -245,60 +241,18 @@
           {
             "name": "startDate",
             "type": {
-              "option": {
-                "defined": "i64"
-              }
+              "option": "i64"
             }
           },
           {
             "name": "expireDate",
-            "type": {
-              "defined": "i64"
-            }
+            "type": "i64"
           }
         ]
       }
     }
   ],
   "types": [
-    {
-      "name": "ErrorCode",
-      "type": {
-        "kind": "enum",
-        "variants": [
-          {
-            "name": "QuoteAccountWalletMismatch"
-          },
-          {
-            "name": "FunderAccountWalletMismatch"
-          },
-          {
-            "name": "RecipientAccountWalletMismatch"
-          },
-          {
-            "name": "RecipientReceiveAccountWalletMismatch"
-          },
-          {
-            "name": "OrderIsExpired"
-          },
-          {
-            "name": "OrderIsNotStarted"
-          },
-          {
-            "name": "ExpireDateInThePast"
-          },
-          {
-            "name": "StartDateInThePast"
-          },
-          {
-            "name": "InvalidOrderStatus"
-          },
-          {
-            "name": "RecipientMatchFunder"
-          }
-        ]
-      }
-    },
     {
       "name": "OrderStatus",
       "type": {
@@ -317,7 +271,56 @@
       }
     }
   ],
-  "metadata": {
-    "address": "p2sSQ51hNP1yiQKtZ81sDzWBM6tkaS2ZtMrgnbBhE4v"
-  }
+  "errors": [
+    {
+      "code": 6000,
+      "name": "QuoteAccountWalletMismatch",
+      "msg": "Quote account mismatch funder wallet"
+    },
+    {
+      "code": 6001,
+      "name": "FunderAccountWalletMismatch",
+      "msg": "Funder account mismatch wallet"
+    },
+    {
+      "code": 6002,
+      "name": "RecipientAccountWalletMismatch",
+      "msg": "Recipient account mismatch wallet"
+    },
+    {
+      "code": 6003,
+      "name": "RecipientReceiveAccountWalletMismatch",
+      "msg": "Recipient receive account mismatch wallet"
+    },
+    {
+      "code": 6004,
+      "name": "OrderIsExpired",
+      "msg": "Order is expired"
+    },
+    {
+      "code": 6005,
+      "name": "OrderIsNotStarted",
+      "msg": "Order is not started"
+    },
+    {
+      "code": 6006,
+      "name": "ExpireDateInThePast",
+      "msg": "Expire date in the past"
+    },
+    {
+      "code": 6007,
+      "name": "StartDateInThePast",
+      "msg": "Start date in the past"
+    },
+    {
+      "code": 6008,
+      "name": "InvalidOrderStatus",
+      "msg": "Invalid order status"
+    },
+    {
+      "code": 6009,
+      "name": "RecipientMatchFunder",
+      "msg": "Recipient should not match funder"
+    }
+  ]
 }

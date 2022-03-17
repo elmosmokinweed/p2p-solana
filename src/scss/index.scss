@@ -1,5 +1,6 @@
 @import "./reset.scss";
 @import "./fonts.scss";
+@import "./mixins.scss";
 
 html {
   scroll-behavior: smooth;
@@ -7,6 +8,7 @@ html {
 
 body {
   font-family: $sl-font-family;
+  background-color: get-color(background, base);
 }
 
 #__next {
