@@ -3,7 +3,6 @@ import {
   WalletMultiButton,
 } from '@solana/wallet-adapter-react-ui';
 import React from 'react';
-import { Typography } from 'src/components/atoms/Typography';
 import styles from './header.module.scss';
 
 export type HeaderProps = {

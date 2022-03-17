@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect } from 'react';
 import {
   useAnchorWallet,
   useConnection,
@@ -47,6 +47,11 @@ const Home: NextPage = () => {
       provider = new Provider(connection, anchorWallet, options);
       //@ts-ignore
       program = new Program(idl, programId, provider);
+      console.log(
+        program.account.order.fetch(
+          '9ANt26vpv8S4Lxa1B8ua9rCPEfuZTapJzG25MjjiGxrL'
+        )
+      );
 
       // CancelOrder instruction wrapper
       const cancelOrder = async (orderStr: String) => {
