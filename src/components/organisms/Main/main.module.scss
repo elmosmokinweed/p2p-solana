@@ -8,6 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-flow: column;
   }
 
   &__content {
@@ -16,6 +17,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 26px;
   }
 
   &__title {

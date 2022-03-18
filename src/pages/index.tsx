@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   useAnchorWallet,
   useConnection,
@@ -26,10 +26,13 @@ import { bs58 } from '@project-serum/anchor/dist/cjs/utils/bytes';
 import { Header } from 'src/components/molecules/Header';
 import { Container } from 'src/components/templates/Container';
 import { Main } from 'src/components/organisms/Main';
+import { useRouter } from 'next/router';
 
 require('@solana/wallet-adapter-react-ui/styles.css');
 
 const Home: NextPage = () => {
+  const [shareUrl, setShareUrl] = useState('');
+  const [isUrlVisible, setIsUrlVisible] = useState(false);
   const options: ConfirmOptions = { preflightCommitment: 'confirmed' };
 
   const programId = new PublicKey(
@@ -316,8 +319,13 @@ const Home: NextPage = () => {
         );
         console.log(`createOrder tx: ${tx}`);
         console.log(`order: ${order.publicKey.toBase58()}`);
-
-        alert(`https:localhost:3000/${order.publicKey.toBase58()}`);
+        setShareUrl(`${window.location.href}${order.publicKey.toBase58()}`);
+        setIsUrlVisible(true);
+        // alert(
+        //   `Order has been created!\nURL: ${
+        //     process.env.PUBLIC_URL
+        //   }/${order.publicKey.toBase58()}`
+        // );
       } catch (e) {
         console.log(e);
         throw new Error(`createOrder error`);
@@ -338,7 +346,11 @@ const Home: NextPage = () => {
       </Head>
       <Header isConnected={true} />
       <Container>
-        <Main createOrder={createOrder} />
+        <Main
+          createOrder={createOrder}
+          url={shareUrl}
+          isUrlVisible={isUrlVisible}
+        />
       </Container>
     </>
   );

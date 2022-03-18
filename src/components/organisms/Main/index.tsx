@@ -3,6 +3,7 @@ import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 import React, { useState } from 'react';
 import { Typography } from 'src/components/atoms/Typography';
 import { Button } from 'src/components/molecules/Button';
+import { Copy } from 'src/components/molecules/Copy';
 import { ExpiresIn } from 'src/components/molecules/ExpiresIn';
 import { Header } from 'src/components/molecules/Header';
 import { ShareModal } from 'src/components/molecules/ShareModal';
@@ -33,10 +34,17 @@ export type MainProps = {
     startDate: number,
     endDate: number
   ) => void;
+  url: string;
+  isUrlVisible: boolean;
 };
 
-export const Main: React.FC<MainProps> = ({ createOrder }) => {
-  const [isButtonActive, setIsButtonActive] = useState(false);
+export const Main: React.FC<MainProps> = ({
+  createOrder,
+  url,
+  isUrlVisible,
+}) => {
+  // const [isButtonActive, setIsButtonActive] = useState(false);//TODO: add inactive button support
+
   const [youPayValue, setYouPayValue] = useState<ValueType>(DEFAULT_TOKEN);
   const [youBuyValue, setYouBuyValue] = useState<ValueType>(DEFAULT_TOKEN);
 
@@ -113,6 +121,7 @@ export const Main: React.FC<MainProps> = ({ createOrder }) => {
             onClick={() => clickHandler()}
           />
         </div>
+        <Copy url={url} isActive={isUrlVisible} />
       </div>
     </>
   );
