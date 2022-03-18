@@ -1,0 +1,326 @@
+{
+  "version": "0.1.0",
+  "name": "p2swap",
+  "instructions": [
+    {
+      "name": "createOrder",
+      "accounts": [
+        {
+          "name": "order",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "funder",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "recipient",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "funderTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "escrow",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "quoteTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "escrowMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "quoteMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "rentSysvar",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "clockSysvar",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "escrowBump",
+          "type": "u8"
+        },
+        {
+          "name": "baseAmount",
+          "type": "u64"
+        },
+        {
+          "name": "quoteAmount",
+          "type": "u64"
+        },
+        {
+          "name": "startDate",
+          "type": {
+            "option": "i64"
+          }
+        },
+        {
+          "name": "expireDate",
+          "type": "i64"
+        }
+      ]
+    },
+    {
+      "name": "cancelOrder",
+      "accounts": [
+        {
+          "name": "order",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "funder",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "funderTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "escrow",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "escrowBump",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "executeOrder",
+      "accounts": [
+        {
+          "name": "order",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "funder",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "recipient",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "recipientTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "recipientReceiveTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "escrow",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "quoteTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "clockSysvar",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "escrowBump",
+          "type": "u8"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Order",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "status",
+            "type": {
+              "defined": "OrderStatus"
+            }
+          },
+          {
+            "name": "baseAmount",
+            "type": "u64"
+          },
+          {
+            "name": "quoteAmount",
+            "type": "u64"
+          },
+          {
+            "name": "baseMint",
+            "type": "publicKey"
+          },
+          {
+            "name": "quoteMint",
+            "type": "publicKey"
+          },
+          {
+            "name": "funder",
+            "type": "publicKey"
+          },
+          {
+            "name": "recipient",
+            "type": "publicKey"
+          },
+          {
+            "name": "escrow",
+            "type": "publicKey"
+          },
+          {
+            "name": "quoteTokenAccount",
+            "type": "publicKey"
+          },
+          {
+            "name": "startDate",
+            "type": {
+              "option": "i64"
+            }
+          },
+          {
+            "name": "expireDate",
+            "type": "i64"
+          }
+        ]
+      }
+    }
+  ],
+  "types": [
+    {
+      "name": "OrderStatus",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Created"
+          },
+          {
+            "name": "Canceled"
+          },
+          {
+            "name": "Completed"
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "QuoteAccountWalletMismatch",
+      "msg": "Quote account mismatch funder wallet"
+    },
+    {
+      "code": 6001,
+      "name": "FunderAccountWalletMismatch",
+      "msg": "Funder account mismatch wallet"
+    },
+    {
+      "code": 6002,
+      "name": "RecipientAccountWalletMismatch",
+      "msg": "Recipient account mismatch wallet"
+    },
+    {
+      "code": 6003,
+      "name": "RecipientReceiveAccountWalletMismatch",
+      "msg": "Recipient receive account mismatch wallet"
+    },
+    {
+      "code": 6004,
+      "name": "OrderIsExpired",
+      "msg": "Order is expired"
+    },
+    {
+      "code": 6005,
+      "name": "OrderIsNotStarted",
+      "msg": "Order is not started"
+    },
+    {
+      "code": 6006,
+      "name": "ExpireDateInThePast",
+      "msg": "Expire date in the past"
+    },
+    {
+      "code": 6007,
+      "name": "StartDateInThePast",
+      "msg": "Start date in the past"
+    },
+    {
+      "code": 6008,
+      "name": "InvalidOrderStatus",
+      "msg": "Invalid order status"
+    },
+    {
+      "code": 6009,
+      "name": "RecipientMatchFunder",
+      "msg": "Recipient should not match funder"
+    }
+  ]
+}

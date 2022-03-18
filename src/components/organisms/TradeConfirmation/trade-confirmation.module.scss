@@ -1,0 +1,66 @@
+.root {
+  width: 512px;
+
+  &__wrapper {
+    width: 100%;
+    height: calc(100vh - 90px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__window {
+    padding: 24px;
+    border: 1px solid #4f4f4f;
+    border-radius: 16px;
+    display: flex;
+    flex-flow: column;
+  }
+
+  &__line {
+    width: 100%;
+    background-color: #4f4f4f;
+    border: 0.5px solid #4f4f4f;
+    border-radius: 10px;
+  }
+
+  &__arrow {
+    align-self: center;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__payment {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+
+    &__line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+  }
+
+  &__elipsis {
+    max-width: 160px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

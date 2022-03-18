@@ -5,37 +5,37 @@ class CustomDocument extends Document {
     const fonts = [
       {
         variations: [
-          '/fonts/Oxanium-Regular.eot',
-          '/fonts/Oxanium-Regular.ttf',
-          '/fonts/Oxanium-Regular.woff',
+          '/fonts/Gilroy-Regular.eot',
+          '/fonts/Gilroy-Regular.ttf',
+          '/fonts/Gilroy-Regular.woff',
         ],
       },
       {
         variations: [
-          '/fonts/Oxanium-Medium.eot',
-          '/fonts/Oxanium-Medium.ttf',
-          '/fonts/Oxanium-Medium.woff',
+          '/fonts/Gilroy-Medium.eot',
+          '/fonts/Gilroy-Medium.ttf',
+          '/fonts/Gilroy-Medium.woff',
         ],
       },
       {
         variations: [
-          '/fonts/Oxanium-Bold.eot',
-          '/fonts/Oxanium-Bold.ttf',
-          '/fonts/Oxanium-Bold.woff',
+          '/fonts/Gilroy-Bold.eot',
+          '/fonts/Gilroy-Bold.ttf',
+          '/fonts/Gilroy-Bold.woff',
         ],
       },
       {
         variations: [
-          '/fonts/Oxanium-ExtraBold.eot',
-          '/fonts/Oxanium-ExtraBold.ttf',
-          '/fonts/Oxanium-ExtraBold.woff',
+          '/fonts/Gilroy-Extrabold.eot',
+          '/fonts/Gilroy-Extrabold.ttf',
+          '/fonts/Gilroy-Extrabold.woff',
         ],
       },
       {
         variations: [
-          '/fonts/Oxanium-SemiBold.eot',
-          '/fonts/Oxanium-SemiBold.ttf',
-          '/fonts/Oxanium-SemiBold.woff',
+          '/fonts/Gilroy-Black.eot',
+          '/fonts/Gilroy-Black.ttf',
+          '/fonts/Gilroy-Black.woff',
         ],
       },
     ];

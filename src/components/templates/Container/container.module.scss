@@ -2,10 +2,10 @@
 @import "src/scss/mixins";
 
 .root {
-  padding-top: 94px;
+  // padding-top: 94px;TODO: add padding for header
 
   &.outer {
-    $width: map-get($am-containers, mobile);
+    $width: map-get($sl-containers, mobile);
 
     width: $width;
     min-width: $width;
@@ -13,7 +13,7 @@
     margin: 0 auto;
 
     @include breakpoint("tablet") {
-      $width: map-get($am-containers, tablet);
+      $width: map-get($sl-containers, tablet);
 
       width: $width;
       min-width: $width;
@@ -21,7 +21,7 @@
     }
 
     @include breakpoint("desktop") {
-      $width: map-get($am-containers, desktop);
+      $width: map-get($sl-containers, desktop);
 
       width: $width;
       min-width: $width;

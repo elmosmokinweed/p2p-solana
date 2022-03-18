@@ -17,6 +17,11 @@
     "skipLibCheck": true,
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/components/molecules/ShareModal/share-modal.module.scs"
+  ],
   "exclude": ["node_modules"]
 }

@@ -5,36 +5,7 @@ import styles from './typography.module.scss';
 
 export type TypographyProps = {
   component?: React.ElementType;
-  preset?:
-    | 'common1'
-    | 'common2'
-    | 'common3'
-    | 'common4'
-    | 'common5'
-    | 'common6'
-    | 'common7'
-    | 'title1'
-    | 'title2'
-    | 'title3'
-    | 'title4'
-    | 'saletitle1'
-    | 'saletitle2'
-    | 'undersaleinscript'
-    | 'mainPrice1'
-    | 'mainPrice2'
-    | 'crossed1'
-    | 'salemeasure1'
-    | 'salecount'
-    | 'header1'
-    | 'label'
-    | 'subtitle'
-    | 'guide'
-    | 'description'
-    | 'tab'
-    | 'category'
-    | 'burger'
-    | 'modaldescription'
-    | 'listtitle1';
+  preset?: 'title1' | 'common1' | 'common2' | 'numbers';
   color?: Color;
   style?: CSSProperties;
   align?: 'left' | 'center' | 'right';
@@ -45,7 +16,7 @@ export const Typography: React.FC<TypographyProps> = ({
   children,
   color = 'black',
   component = 'p',
-  preset = 'common1',
+  preset = 'title1',
   style,
   align,
   className: classNameFromProps,

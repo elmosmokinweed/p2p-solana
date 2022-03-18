@@ -1,0 +1,23 @@
+.root {
+  &__wrapper {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    right: 0;
+    // background-color: red;
+    height: calc(100vh - 90px);
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease-in-out;
+    background-color: get-color(background, base);
+
+    &.active {
+      transition: all 0.2s ease-in-out;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}

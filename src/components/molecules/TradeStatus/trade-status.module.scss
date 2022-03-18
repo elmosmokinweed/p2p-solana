@@ -1,0 +1,45 @@
+@import "src/scss/mixins";
+
+.root {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px 24px 12px 24px;
+  border: 1px solid #181e25;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__button {
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #181e25;
+  }
+
+  &__input {
+    background: none;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 42px;
+    color: get-color(inactive, base);
+    text-align: center;
+
+    width: 30%;
+
+    &::placeholder {
+      font-size: 32px;
+      font-weight: 400;
+      line-height: 42px;
+      color: get-color(inactive, base);
+      opacity: 0.5;
+    }
+  }
+}

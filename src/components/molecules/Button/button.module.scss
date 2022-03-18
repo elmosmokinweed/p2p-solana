@@ -1,0 +1,20 @@
+.root {
+  margin-top: 20px;
+  width: 100%;
+  background: #101419;
+  padding: 16px;
+  border-radius: 40px;
+
+  transition: background 3s ease-in-out;
+
+  &.active {
+    background: linear-gradient(
+      90.84deg,
+      #0d1139 2.12%,
+      #741ca6 44.55%,
+      #c505d6 99.12%
+    );
+
+    transition: background 3s ease-in-out;
+  }
+}

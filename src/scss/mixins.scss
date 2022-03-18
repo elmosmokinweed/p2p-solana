@@ -17,7 +17,7 @@
   }
 }
 
-@function get-color($nsle, $state) {
+@function get-color($name, $state) {
   $color: map-get($sl-colors, $name);
 
   @if $color != null {

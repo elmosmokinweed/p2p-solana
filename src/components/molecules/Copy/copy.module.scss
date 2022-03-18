@@ -1,0 +1,36 @@
+.root {
+  width: 512px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  border: 1px solid #4f4f4f;
+  padding: 12px;
+  border-radius: 16px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4 ease-in-out;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.4 ease-in-out;
+  }
+
+  &__copy {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__url {
+      margin-right: 16px;
+
+      max-width: 400px;
+
+      overflow-x: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}

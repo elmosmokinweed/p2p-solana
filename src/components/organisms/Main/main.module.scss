@@ -1,0 +1,40 @@
+.root {
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+
+  &__wrapper {
+    height: calc(100vh - 88px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+  }
+
+  &__content {
+    width: 512px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 26px;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+    align-self: flex-start;
+  }
+
+  &__info {
+    // dis
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  &__swap {
+    margin: 10px;
+  }
+}
