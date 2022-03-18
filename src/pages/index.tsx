@@ -96,7 +96,7 @@ const Home: NextPage = () => {
         }
 
         // TODO: Add catch here to check if user reject transaction
-        const tx = await program.rpc.cancelOrder(new BN(escrowBump), {
+        const tx = await program!.rpc.cancelOrder(new BN(escrowBump), {
           accounts: {
             order: order,
             funder: funder,
@@ -180,7 +180,7 @@ const Home: NextPage = () => {
         }
 
         // TODO: Add catch here to check if user reject transaction
-        const tx = await program.rpc.executeOrder(new BN(escrowBump), {
+        const tx = await program!.rpc.executeOrder(new BN(escrowBump), {
           accounts: {
             order: order,
             funder: funder,

@@ -176,7 +176,7 @@ const ConfirmTrade: NextPage = () => {
     }
 
     // TODO: Add catch here to check if user reject transaction
-    const tx = await program.rpc.executeOrder(new BN(escrowBump), {
+    const tx = await program!.rpc.executeOrder(new BN(escrowBump), {
       accounts: {
         order: order,
         funder: funder,
